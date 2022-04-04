@@ -4,11 +4,11 @@ builder.Services.AddScoped<IUser, User>(provider => new User { Name = "Paul" });
 
 var app = builder.Build();
 
-app.MapGet("HelloWorld", () =>
+app.MapGet("helloworld", () =>
 {
     using var scope = app.Services.CreateScope();
     var user = scope.ServiceProvider.GetRequiredService<IUser>();
-    return $"HelloWorld {user.Name}";
+    return $"Hello World {user.Name}";
 });
 
 app.Run();

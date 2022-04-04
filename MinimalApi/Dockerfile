@@ -2,12 +2,11 @@ FROM mcr.microsoft.com/dotnet/sdk:6.0 AS build-env
 WORKDIR /source
 
 # Copy csproj and restore as distinct layers
-COPY *.sln .
-COPY MinimalApi/*.csproj ./MinimalApi/
-RUN dotnet restore
+COPY MinimalApi.csproj ./MinimalApi/MinimalApi.csproj
+RUN cd MinimalApi && dotnet restore
 
 # Copy everything else and build app
-COPY MinimalApi/. ./MinimalApi/
+COPY . ./MinimalApi/
 WORKDIR /source/MinimalApi
 RUN dotnet publish -c release -o /app --no-restore
 
