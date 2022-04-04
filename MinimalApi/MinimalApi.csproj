@@ -4,6 +4,9 @@
     <TargetFramework>net6.0</TargetFramework>
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
+    <AutoGenerateBindingRedirects>false</AutoGenerateBindingRedirects>
   </PropertyGroup>
-
+  <PropertyGroup>
+	<RestoreFallbackFolders>clear</RestoreFallbackFolders>
+  </PropertyGroup>
 </Project>
