@@ -1,6 +1,6 @@
 services:
   minimalapi:
     image: minimalapi  
-    build: .
+    build: ./minimalapi/
     ports:
       - "80:80"    
